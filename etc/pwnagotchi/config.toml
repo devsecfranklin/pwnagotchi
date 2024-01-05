@@ -1,0 +1,36 @@
+# SPDX-FileCopyrightText: 2023 DE:AD:10:C5 <franklin@dead10c5.org>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+
+# Add your configuration overrides on this file any configuration changes done to default.toml will be lost!
+# Example:
+# ui.display.enabled = true
+# ui.display.type = "waveshare_2"
+
+main.name = "theDevilsVoice"
+main.lang = "en"
+main.whitelist = [
+  "DiazWIFI",
+  "clone"
+]
+
+main.plugins.grid.enabled = true
+main.plugins.grid.report = true
+main.plugins.grid.exclude = [
+  "DiazWIFI",
+  "clone"
+]
+
+ui.display.enabled = true
+ui.display.type = "waveshare_2"
+ui.display.color = "black"
+
+fs.memory.enabled = true
+fs.memory.mounts.data.enabled = true
+fs.memory.mounts.log.enabled = true     # switch
+fs.memory.mounts.log.mount = "/var/log" # which directory to map into memory
+fs.memory.mounts.log.size = "50M"       # max size to put into memory
+fs.memory.mounts.log.sync = 60          # interval in seconds to sync back onto disk
+fs.memory.mounts.log.zram = true        # use zram for compression (recommended)
+fs.memory.mounts.log.rsync = true       # use rsync to copy only the difference (recommended)
